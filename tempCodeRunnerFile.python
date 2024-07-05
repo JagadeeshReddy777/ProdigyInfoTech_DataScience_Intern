@@ -1,0 +1,26 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+data = pd.read_csv('population_data.csv')
+data.head()
+
+
+# Set the plot style
+sns.set(style="whitegrid")
+
+# Create the bar chart
+plt.figure(figsize=(12, 8))
+sns.barplot(x='Age', y='Population', data=data, palette='viridis')
+
+# Add titles and labels
+plt.title('Population Distribution by Age Group', fontsize=16)
+plt.xlabel('Age Group', fontsize=14)
+plt.ylabel('Population', fontsize=14)
+
+# Rotate x-axis labels for better readability
+plt.xticks(rotation=45)
+
+# Show the plot
+plt.tight_layout()
+plt.show()
